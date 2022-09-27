@@ -11,8 +11,9 @@ class _AskForSupportState extends State<AskForSupport> {
   TextEditingController _SupportCategoryController =
       TextEditingController(text: 'Select a group');
   TextEditingController _SupportTitleController =
-      TextEditingController(text: 'Select a support type');
-  TextEditingController _SupportDescriptionController = TextEditingController();
+      TextEditingController(text: 'Choose from the list');
+  TextEditingController _SupportDescriptionController =
+      TextEditingController(text: 'Type here');
   TextEditingController _DateTimeController =
       TextEditingController(text: 'Select preferred date and time');
 
@@ -63,7 +64,7 @@ class _AskForSupportState extends State<AskForSupport> {
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Text(
-                      'Ask for Support?',
+                      'Request?',
                       style: TextStyle(
                         color: Constants.darkBlue,
                         fontSize: 25,
@@ -83,7 +84,7 @@ class _AskForSupportState extends State<AskForSupport> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         //Support Title
-                        _textTitles(label: 'Support Type*'),
+                        _textTitles(label: 'Select your request type*'),
                         _textFormField(
                             valueKey: 'SupportTitle',
                             controller: _SupportTitleController,
@@ -93,7 +94,7 @@ class _AskForSupportState extends State<AskForSupport> {
                             },
                             maxLength: 100),
                         //Support Description
-                        _textTitles(label: 'Support Description'),
+                        _textTitles(label: 'What is the request about?'),
                         _textFormField(
                             valueKey: 'SupportDescription',
                             controller: _SupportDescriptionController,

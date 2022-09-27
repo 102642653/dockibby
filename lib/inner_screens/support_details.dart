@@ -40,7 +40,7 @@ class _SupportDetailsScreenState extends State<SupportDetailsScreen> {
             height: 15,
           ),
           Text(
-            'Support title',
+            'Request Title',
             style: TextStyle(
                 color: Constants.darkBlue,
                 fontWeight: FontWeight.bold,
@@ -106,7 +106,7 @@ class _SupportDetailsScreenState extends State<SupportDetailsScreen> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          'Claimed on:',
+                          'Requested on:',
                           style: _titlestyle,
                         ),
                         Text(
@@ -125,13 +125,13 @@ class _SupportDetailsScreenState extends State<SupportDetailsScreen> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          'Requested on:',
+                          'Accepted on:',
                           style: _titlestyle,
                         ),
                         Text(
-                          '4/10/2022',
+                          'open',
                           style: TextStyle(
-                              color: Colors.red,
+                              color: Colors.green,
                               fontWeight: FontWeight.normal,
                               fontSize: 15),
                         ),
@@ -270,38 +270,39 @@ class _SupportDetailsScreenState extends State<SupportDetailsScreen> {
                                   ),
                                 ),
                                 Flexible(
-                                    child: Column(
-                                  children: [
-                                    Padding(
-                                      padding: const EdgeInsets.symmetric(
-                                          horizontal: 8),
-                                      child: MaterialButton(
-                                        onPressed: () {},
-                                        color: Colors.pink.shade700,
-                                        elevation: 0,
-                                        shape: RoundedRectangleBorder(
-                                            borderRadius:
-                                                BorderRadius.circular(8)),
-                                        child: Text(
-                                          'Post',
-                                          style: TextStyle(
-                                            color: Colors.white,
-                                            fontWeight: FontWeight.bold,
-                                            fontSize: 14,
+                                  child: Column(
+                                    children: [
+                                      Padding(
+                                        padding: const EdgeInsets.symmetric(
+                                            horizontal: 8),
+                                        child: MaterialButton(
+                                          onPressed: () {},
+                                          color: Colors.pink.shade700,
+                                          elevation: 0,
+                                          shape: RoundedRectangleBorder(
+                                              borderRadius:
+                                                  BorderRadius.circular(8)),
+                                          child: Text(
+                                            'Post',
+                                            style: TextStyle(
+                                              color: Colors.white,
+                                              fontWeight: FontWeight.bold,
+                                              fontSize: 14,
+                                            ),
                                           ),
                                         ),
                                       ),
-                                    ),
-                                    TextButton(
-                                      onPressed: () {
-                                        setState(() {
-                                          _isCommenting = !_isCommenting;
-                                        });
-                                      },
-                                      child: Text('Cancel'),
-                                    ),
-                                  ],
-                                ))
+                                      TextButton(
+                                        onPressed: () {
+                                          setState(() {
+                                            _isCommenting = !_isCommenting;
+                                          });
+                                        },
+                                        child: Text('Cancel'),
+                                      ),
+                                    ],
+                                  ),
+                                ),
                               ],
                             )
                           : Center(

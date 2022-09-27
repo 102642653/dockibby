@@ -35,7 +35,7 @@ class _selectScreenState extends State<selectScreen> {
         elevation: 0,
         backgroundColor: Theme.of(context).scaffoldBackgroundColor,
         title: Text(
-          'Support History',
+          'Request History',
           style: TextStyle(color: Colors.pink),
         ),
         actions: [

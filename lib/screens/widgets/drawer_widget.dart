@@ -39,19 +39,19 @@ class DrawerWidget extends StatelessWidget {
             height: 10,
           ),
           _listTiles(
-              label: 'Ask for Support',
+              label: 'Request Support',
               fct: () {
                 _navigateToAskForSupportScreen(context);
               },
               icon: Icons.handshake_rounded),
           _listTiles(
-              label: 'Support History',
+              label: 'Request History',
               fct: () {
                 _navigateToSupportHistoryScreen(context);
               },
               icon: Icons.history_outlined),
           _listTiles(
-              label: 'My Supporters',
+              label: 'My Groups',
               fct: () {
                 _navigateToMySupportersScreen(context);
               },

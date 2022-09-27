@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:workos_english/inner_screens/askSupport.dart';
 import 'package:workos_english/screens/widgets/drawer_widget.dart';
 
 class UrgentHelpScreen extends StatefulWidget {
@@ -70,7 +71,7 @@ class _UrgentHelpScreenState extends State<UrgentHelpScreen> {
                 _threeButtonsRow(
                   text1: 'Need To Talk',
                   text2: 'Alone',
-                  text3: 'Others',
+                  text3: 'Car',
                   color1: Colors.brown.shade400,
                   color2: Colors.brown.shade400,
                   color3: Colors.brown.shade400,
@@ -84,13 +85,13 @@ class _UrgentHelpScreenState extends State<UrgentHelpScreen> {
                 _threeButtonsRow(
                   text1: 'COVID',
                   text2: 'Lost',
-                  text3: 'Other Emergency',
+                  text3: 'Other',
                   color1: Colors.red.shade600,
                   color2: Colors.red.shade600,
                   color3: Colors.red.shade600,
                   fontSize1: 28,
                   fontSize2: 35,
-                  fontSize3: 17,
+                  fontSize3: 28,
                 ),
                 SizedBox(
                   height: 5,
@@ -154,7 +155,9 @@ class _UrgentHelpScreenState extends State<UrgentHelpScreen> {
           child: SizedBox(
             height: 120,
             child: ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                _navigateToAskForSupportScreen(context);
+              },
               style: ElevatedButton.styleFrom(backgroundColor: color3),
               child: Text(
                 text3,
@@ -165,6 +168,15 @@ class _UrgentHelpScreenState extends State<UrgentHelpScreen> {
           ),
         ),
       ],
+    );
+  }
+
+  void _navigateToAskForSupportScreen(context) {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => AskForSupport(),
+      ),
     );
   }
 }
