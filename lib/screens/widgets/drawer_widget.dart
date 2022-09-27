@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:workos_english/constants/constants.dart';
 import 'package:workos_english/inner_screens/askSupport.dart';
 import 'package:workos_english/inner_screens/setting.dart';
-import 'package:workos_english/screens/groups.dart';
+import 'package:workos_english/inner_screens/groups.dart';
 import 'package:workos_english/screens/select.dart';
 
 class DrawerWidget extends StatelessWidget {

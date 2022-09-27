@@ -249,37 +249,37 @@ class _SignUpState extends State<SignUp> with TickerProviderStateMixin {
                       SizedBox(
                         height: 20,
                       ),
-                      //DVANumber
-                      TextFormField(
-                        textInputAction: TextInputAction.done,
-                        onEditingComplete: () => _submitFormOnSignUp,
-                        focusNode: _DVAFocusNode,
-                        keyboardType: TextInputType.text,
-                        controller: _DVAfileNumberController,
-                        validator: (value) {
-                          if (value!.isEmpty ||
-                              value.length < 8 ||
-                              value.length > 9) {
-                            return "Please enter a valid DVA file number";
-                          } else {
-                            return null;
-                          }
-                        },
-                        style: TextStyle(color: Colors.white),
-                        decoration: InputDecoration(
-                          hintText: 'DVA File Number',
-                          hintStyle: TextStyle(color: Colors.white),
-                          enabledBorder: UnderlineInputBorder(
-                            borderSide: BorderSide(color: Colors.white),
-                          ),
-                          focusedBorder: UnderlineInputBorder(
-                            borderSide: BorderSide(color: Colors.white),
-                          ),
-                          errorBorder: UnderlineInputBorder(
-                            borderSide: BorderSide(color: Colors.red),
-                          ),
-                        ),
-                      ),
+                      // //DVANumber
+                      // TextFormField(
+                      //   textInputAction: TextInputAction.done,
+                      //   onEditingComplete: () => _submitFormOnSignUp,
+                      //   focusNode: _DVAFocusNode,
+                      //   keyboardType: TextInputType.text,
+                      //   controller: _DVAfileNumberController,
+                      //   validator: (value) {
+                      //     if (value!.isEmpty ||
+                      //         value.length < 8 ||
+                      //         value.length > 9) {
+                      //       return "Please enter a valid DVA file number";
+                      //     } else {
+                      //       return null;
+                      //     }
+                      //   },
+                      //   style: TextStyle(color: Colors.white),
+                      //   decoration: InputDecoration(
+                      //     hintText: 'DVA File Number',
+                      //     hintStyle: TextStyle(color: Colors.white),
+                      //     enabledBorder: UnderlineInputBorder(
+                      //       borderSide: BorderSide(color: Colors.white),
+                      //     ),
+                      //     focusedBorder: UnderlineInputBorder(
+                      //       borderSide: BorderSide(color: Colors.white),
+                      //     ),
+                      //     errorBorder: UnderlineInputBorder(
+                      //       borderSide: BorderSide(color: Colors.red),
+                      //     ),
+                      //   ),
+                      // ),
                     ],
                   ),
                 ),
