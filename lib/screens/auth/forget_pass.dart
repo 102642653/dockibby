@@ -1,7 +1,5 @@
-import 'package:cached_network_image/cached_network_image.dart';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:workos_english/screens/auth/register.dart';
+import 'package:flutter_svg/svg.dart';
 
 class forgetPasswordScreen extends StatefulWidget {
   @override
@@ -10,36 +8,16 @@ class forgetPasswordScreen extends StatefulWidget {
 
 class _forgetPasswordScreenState extends State<forgetPasswordScreen>
     with TickerProviderStateMixin {
-  late AnimationController _animationController;
-  late Animation<double> _animation;
+
 
   late TextEditingController _forgetPassTextController =
       TextEditingController(text: '');
 
   @override
   void dispose() {
-    _animationController.dispose();
+
     _forgetPassTextController.dispose();
     super.dispose();
-  }
-
-  @override
-  void initState() {
-    _animationController =
-        AnimationController(vsync: this, duration: Duration(seconds: 20));
-    _animation =
-        CurvedAnimation(parent: _animationController, curve: Curves.linear)
-          ..addListener(() {
-            setState(() {});
-          })
-          ..addStatusListener((animationStatus) {
-            if (animationStatus == AnimationStatus.completed) {
-              _animationController.reset();
-              _animationController.forward();
-            }
-          });
-    _animationController.forward();
-    super.initState();
   }
 
   void _forgetPassFCT() {
@@ -48,37 +26,44 @@ class _forgetPasswordScreenState extends State<forgetPasswordScreen>
 
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
     return Scaffold(
       // backgroundColor: Colors.blue,
-      body: Stack(
-        children: [
-          CachedNetworkImage(
-            imageUrl:
-                "https://cdn.discordapp.com/attachments/832512849451548682/1021376517160308806/photoholgic-jK9dT34TfuI-unsplash.jpg",
-            placeholder: (context, url) => Image.asset(
-              'assets/images/wallpaper.jpg',
-              fit: BoxFit.fill,
-            ),
-            errorWidget: (context, url, error) => Icon(Icons.error),
-            width: double.infinity,
-            height: double.infinity,
-            fit: BoxFit.cover,
-            alignment: FractionalOffset(_animation.value, 0),
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(
-              horizontal: 16,
-            ),
-            child: ListView(
-              children: [
-                SizedBox(
-                  height: size.height * 0.1,
-                ),
+      body: Stack(children: [
+        Positioned(
+        bottom: 0,
+        right: 0,
+        child: RotatedBox(
+        quarterTurns: 2,
+        child: Image(image: AssetImage('assets/images/shape1.png')),
+    ),
+    ),
+    Positioned(
+    top: 0,
+    left: 0,
+    child: Image(image: AssetImage('assets/images/shape1.png')),
+    ),
+    Padding(
+    padding: const EdgeInsets.symmetric(
+    horizontal: 16,
+    ),
+    child: ListView(
+    children: [
+    SizedBox(
+    height: 30,
+    ),
+    Align(
+    alignment: Alignment.bottomCenter,
+    child: SvgPicture.asset('assets/images/person.svg',
+    height: 175, width: 200),
+    ),
+
+      SizedBox(
+        height: 20,
+      ),
                 Text(
                   'Forgot Password?',
                   style: TextStyle(
-                      color: Colors.white,
+                      color: Colors.black54,
                       fontWeight: FontWeight.bold,
                       fontSize: 30),
                 ),
@@ -86,18 +71,18 @@ class _forgetPasswordScreenState extends State<forgetPasswordScreen>
                   height: 10,
                 ),
                 Text(
-                  'Email address',
+                  'Please Enter Email address to reset your password',
                   style: TextStyle(
-                      color: Colors.white,
-                      fontStyle: FontStyle.italic,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 20),
+                      color: Colors.black54,
+                      fontWeight: FontWeight.w500,
+                      fontSize: 16),
                 ),
                 SizedBox(
                   height: 20,
                 ),
                 TextField(
                   controller: _forgetPassTextController,
+                  keyboardType: TextInputType.emailAddress,
                   decoration: InputDecoration(
                     filled: true,
                     fillColor: Colors.white,
@@ -117,7 +102,7 @@ class _forgetPasswordScreenState extends State<forgetPasswordScreen>
                 ),
                 MaterialButton(
                   onPressed: _forgetPassFCT,
-                  color: Colors.pink.shade700,
+                  color: Colors.red.shade700,
                   elevation: 8,
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(13)),
@@ -133,7 +118,18 @@ class _forgetPasswordScreenState extends State<forgetPasswordScreen>
                       ),
                     ),
                   ),
-                )
+                ),
+      SizedBox(
+        height: 10,
+      ),
+      Align(
+        alignment: Alignment.bottomCenter,
+        child: Image.asset(
+          'assets/images/logo.png',
+          height: 80,
+          width: 100,
+        ),
+      ),
               ],
             ),
           ),
