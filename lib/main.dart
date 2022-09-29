@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter dockibby',
       theme: ThemeData(
-        scaffoldBackgroundColor: Color(0xFFEDE7DC),
+        scaffoldBackgroundColor: Colors.red[100],
         primarySwatch: Colors.blue,
       ),
       home: selectScreen(),
