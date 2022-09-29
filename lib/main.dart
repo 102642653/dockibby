@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:workos_english/screens/auth/login.dart';
+import 'package:workos_english/screens/HomeScreen.dart';
 import 'package:workos_english/screens/select.dart';
+import 'package:workos_english/screens/auth/register.dart';
+
 
 void main() {
   runApp(const MyApp());
@@ -19,7 +22,7 @@ class MyApp extends StatelessWidget {
         scaffoldBackgroundColor: Colors.red[100],
         primarySwatch: Colors.blue,
       ),
-      home: selectScreen(),
+      home: HomeScreen(),
     );
   }
 }
